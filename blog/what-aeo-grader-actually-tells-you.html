@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>What an AEO Grader Actually Tells You: And What It Doesn't | EAS GEO</title>
+  <meta name="description" content="Most brands look at the overall AEO score and miss the most actionable data in the report. Here's how to read an AEO grader result like a strategist: using real data from the Everyday Advantage Studio baseline run.">
+  <meta property="og:title" content="What an AEO Grader Actually Tells You: And What It Doesn't"/>
+  <meta property="og:description" content="The competitor bucket is the most underused signal in any AEO report. Here's how to read it: with real data from a live brand baseline run."/>
+  <meta property="og:url" content="https://geo.everydayadvantagestudio.com/blog/what-aeo-grader-actually-tells-you.html"/>
+  <meta name="twitter:card" content="summary_large_image"/>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BlogPosting",
+        "@id": "https://geo.everydayadvantagestudio.com/blog/what-aeo-grader-actually-tells-you.html#article",
+        "headline": "What an AEO Grader Actually Tells You, And What It Doesn't",
+        "description": "Most brands look at the overall AEO score and miss the most actionable data in the report. Here's how to read an AEO grader result like a strategist, using real data from the Everyday Advantage Studio baseline run.",
+        "datePublished": "2026-05-06",
+        "dateModified": "2026-05-06",
+        "author": {
+          "@type": "Person",
+          "@id": "https://geo.everydayadvantagestudio.com/#person-jeff",
+          "name": "Jeff Mark",
+          "jobTitle": "Curator",
+          "description": "Retired Army Cybersecurity Engineer, CISSP, CISM, PMP"
+        },
+        "publisher": { "@id": "https://geo.everydayadvantagestudio.com/#organization" },
+        "url": "https://geo.everydayadvantagestudio.com/blog/what-aeo-grader-actually-tells-you.html",
+        "isPartOf": { "@id": "https://geo.everydayadvantagestudio.com/blog/#blog" },
+        "about": ["AEO grader", "Generative Engine Optimization", "AI search visibility", "brand recognition", "competitor bucket analysis"],
+        "inLanguage": "en-US",
+        "mainEntityOfPage": "https://geo.everydayadvantagestudio.com/blog/what-aeo-grader-actually-tells-you.html"
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What is an AEO grader?",
+            "acceptedAnswer": { "@type": "Answer", "text": "An AEO (Answer Engine Optimization) grader is a tool that measures how visible your brand is across AI search engines like ChatGPT, Perplexity, and Google AI Overviews. It scores your brand on dimensions including recognition, market positioning, content quality, sentiment, and share of voice." }
+          },
+          {
+            "@type": "Question",
+            "name": "What does the competitor bucket in an AEO report mean?",
+            "acceptedAnswer": { "@type": "Answer", "text": "The competitor bucket shows which brands an AI engine groups your brand alongside. This reveals what category the engine believes your brand belongs to, which determines which user queries you appear on. If the engine has you in the wrong category, fixing that misclassification is more valuable than improving any other score." }
+          },
+          {
+            "@type": "Question",
+            "name": "Why do different AI engines score the same brand differently?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Each engine uses different data sources. ChatGPT and Gemini rely primarily on their training data with different cutoff dates. Perplexity uses real-time web retrieval. Gemini additionally indexes social media signals and directory listings. This means the same brand can score very differently across engines, and the remediation strategy differs for each." }
+          },
+          {
+            "@type": "Question",
+            "name": "How long does it take for AEO changes to show up in grader scores?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Perplexity updates fastest because it uses real-time retrieval, changes to your website can appear in Perplexity results within days. ChatGPT and Gemini update on training cycles, so changes to your site structure and schema may take weeks to months to be reflected. Third-party citations and directory listings can accelerate this process." }
+          },
+          {
+            "@type": "Question",
+            "name": "What is the most important metric in an AEO grader report?",
+            "acceptedAnswer": { "@type": "Answer", "text": "The competitor bucket, not the overall score. The competitor bucket reveals how the engine has categorized your brand, which determines which queries you appear on. A brand with a low overall score but correct category classification is in a better strategic position than a brand with a higher score in the wrong category." }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300..700;1,9..40,300..700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css">
+
+  <style>
+    .post-hero { padding-block: var(--space-9) var(--space-7); border-bottom: 1px solid var(--border); }
+    .post-meta-row { display: flex; align-items: center; gap: var(--space-4); margin-bottom: var(--space-5); flex-wrap: wrap; }
+    .post-cat { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--teal); }
+    .post-date { font-size: 0.75rem; color: var(--ink-dim); }
+    .post-read-time { font-size: 0.75rem; color: var(--ink-dim); }
+    .post-h1 { font-family: var(--serif); font-size: clamp(2rem, 5vw, 3.4rem); font-weight: 400; line-height: 1.08; letter-spacing: -0.02em; margin-bottom: var(--space-5); max-width: 22ch; }
+    .post-lede { font-size: 1.1rem; color: var(--ink-muted); line-height: 1.7; max-width: 58ch; margin-bottom: var(--space-5); font-weight: 300; }
+    .post-summary-box { padding: var(--space-5); background: color-mix(in srgb, var(--teal) 6%, transparent); border: 1px solid var(--teal-dim); border-radius: 10px; margin-bottom: var(--space-5); }
+    .post-summary-label { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--teal-light); margin-bottom: var(--space-3); }
+    .post-summary-text { font-size: 0.9rem; color: var(--ink-muted); line-height: 1.65; }
+    .post-summary-text strong { color: var(--ink); font-weight: 500; }
+
+    .post-author-bar { display: flex; align-items: center; gap: var(--space-4); padding: var(--space-4) var(--space-5); background: var(--bg-surface); border: 1px solid var(--border); border-radius: 10px; }
+    .author-photo { width: 48px; height: 48px; border-radius: 50%; object-fit: cover; background: var(--bg-card); flex-shrink: 0; }
+    .author-name { font-size: 0.875rem; font-weight: 600; color: var(--ink); margin-bottom: 2px; }
+    .author-creds { font-size: 0.72rem; color: var(--teal-light); }
+
+    .post-body { padding-block: var(--space-8); }
+    .post-content { max-width: var(--max-prose); margin: 0 auto; }
+    .post-content h2 { font-family: var(--serif); font-size: clamp(1.5rem, 3vw, 2rem); font-weight: 400; line-height: 1.2; letter-spacing: -0.01em; margin-top: var(--space-8); margin-bottom: var(--space-4); color: var(--ink); }
+    .post-content h3 { font-family: var(--sans); font-size: 1.05rem; font-weight: 700; margin-top: var(--space-6); margin-bottom: var(--space-3); color: var(--ink); }
+    .post-content p { font-size: 1rem; color: var(--ink-muted); line-height: 1.75; margin-bottom: var(--space-4); }
+    .post-content p strong { color: var(--ink); font-weight: 600; }
+    .post-content ul, .post-content ol { margin-bottom: var(--space-4); padding-left: var(--space-5); }
+    .post-content li { font-size: 1rem; color: var(--ink-muted); line-height: 1.7; margin-bottom: var(--space-2); }
+    .post-content li strong { color: var(--ink); font-weight: 600; }
+    .post-content a { color: var(--teal-light); text-decoration: underline; text-decoration-color: color-mix(in srgb, var(--teal) 40%, transparent); }
+    .post-content a:hover { color: var(--teal); }
+
+    .data-table-wrap { overflow-x: auto; margin: var(--space-6) 0; border-radius: 10px; border: 1px solid var(--border); }
+    .data-table { width: 100%; border-collapse: collapse; font-size: 0.875rem; }
+    .data-table th { padding: var(--space-3) var(--space-4); text-align: left; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-muted); background: var(--bg-card); border-bottom: 1px solid var(--border); }
+    .data-table td { padding: var(--space-3) var(--space-4); border-bottom: 1px solid var(--border); color: var(--ink-muted); vertical-align: top; line-height: 1.5; }
+    .data-table tr:last-child td { border-bottom: none; }
+    .data-table td:first-child { color: var(--ink); font-weight: 500; }
+    .data-table tr:nth-child(even) td { background: color-mix(in srgb, var(--teal) 2%, transparent); }
+
+    .callout-box { display: flex; gap: var(--space-4); padding: var(--space-5); border-radius: 10px; margin: var(--space-6) 0; }
+    .callout-box.orange { background: color-mix(in srgb, var(--orange) 6%, transparent); border: 1px solid color-mix(in srgb, var(--orange) 25%, transparent); }
+    .callout-box.teal { background: color-mix(in srgb, var(--teal) 6%, transparent); border: 1px solid var(--teal-dim); }
+    .callout-icon { font-size: 1.1rem; flex-shrink: 0; margin-top: 2px; }
+    .callout-body { font-size: 0.9rem; color: var(--ink-muted); line-height: 1.65; }
+    .callout-body strong { color: var(--ink); }
+
+    .score-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-4); margin: var(--space-6) 0; }
+    @media (max-width: 600px) { .score-grid { grid-template-columns: 1fr; } }
+    .score-card { padding: var(--space-4); background: var(--bg-card); border: 1px solid var(--border); border-radius: 10px; text-align: center; }
+    .score-engine { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--ink-muted); margin-bottom: var(--space-2); }
+    .score-num { font-family: var(--serif); font-size: 2.4rem; font-weight: 400; color: var(--teal-light); line-height: 1; margin-bottom: 4px; }
+    .score-denom { font-size: 0.75rem; color: var(--ink-dim); }
+
+    .faq-section { margin-top: var(--space-9); padding-top: var(--space-7); border-top: 1px solid var(--border); }
+    .faq-section h2 { font-family: var(--serif); font-size: 1.8rem; font-weight: 400; margin-bottom: var(--space-6); }
+    .faq-item { margin-bottom: var(--space-5); padding-bottom: var(--space-5); border-bottom: 1px solid var(--border); }
+    .faq-item:last-child { border-bottom: none; }
+    .faq-q { font-size: 1rem; font-weight: 700; color: var(--ink); margin-bottom: var(--space-3); line-height: 1.4; }
+    .faq-a { font-size: 0.9rem; color: var(--ink-muted); line-height: 1.7; }
+
+    .post-cta { margin-top: var(--space-9); padding: var(--space-7); background: var(--bg-surface); border: 1px solid var(--border); border-radius: 16px; text-align: center; }
+    .post-cta h3 { font-family: var(--serif); font-size: 1.8rem; font-weight: 400; margin-bottom: var(--space-3); }
+    .post-cta p { font-size: 0.9rem; color: var(--ink-muted); max-width: 42ch; margin: 0 auto var(--space-5); line-height: 1.65; }
+    .post-cta-free { font-size: 0.75rem; color: var(--ink-dim); margin-top: var(--space-3); }
+
+    .author-bio { margin-top: var(--space-8); padding: var(--space-6); background: var(--bg-surface); border: 1px solid var(--border); border-radius: 12px; display: flex; gap: var(--space-5); align-items: flex-start; }
+    .author-bio-photo { width: 72px; height: 72px; border-radius: 50%; object-fit: cover; background: var(--bg-card); flex-shrink: 0; }
+    .author-bio-name { font-size: 1rem; font-weight: 700; color: var(--ink); margin-bottom: 4px; }
+    .author-bio-title { font-size: 0.75rem; color: var(--teal-light); font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: var(--space-3); }
+    .author-bio-text { font-size: 0.875rem; color: var(--ink-muted); line-height: 1.65; }
+    .author-bio-certs { display: flex; flex-wrap: wrap; gap: var(--space-2); margin-top: var(--space-3); }
+  </style>
+</head>
+<body>
+
+  <header class="site-header" id="siteHeader">
+    <div class="wrap">
+      <div class="header-inner">
+        <a href="/" class="logo">
+          <img src="/EAS-GEO-icon-800.png" alt="EAS GEO" class="logo-mark-img" width="32" height="32">
+          <div><div class="logo-text">EAS GEO</div><div class="logo-sub">by Everyday Advantage Studio</div></div>
+        </a>
+        <nav class="header-nav">
+          <a href="/tools/">Tools</a>
+          <a href="/blog/">Blog</a>
+          <a href="https://www.hubspot.com/aeo-grader" target="_blank" rel="noopener" class="nav-cta">Free AI Check</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <section class="post-hero">
+    <div class="wrap">
+      <div class="breadcrumb"><a href="/">Home</a><span class="breadcrumb-sep">›</span><a href="/blog/">Blog</a><span class="breadcrumb-sep">›</span><span>What an AEO Grader Actually Tells You</span></div>
+      <div class="post-meta-row">
+        <span class="post-cat">AEO Strategy</span>
+        <span class="post-date">May 6, 2026</span>
+        <span class="post-read-time">12 min read</span>
+      </div>
+      <h1 class="post-h1">What an AEO Grader Actually Tells You, And What It Doesn't</h1>
+      <p class="post-lede">Most brands run an AEO grader report, look at the overall score, feel bad about it, and have no idea what to do next. Here's how to read the report like a strategist, using the real baseline data from Everyday Advantage Studio's May 2026 run.</p>
+
+      <div class="post-summary-box">
+        <p class="post-summary-label">Quick Answer</p>
+        <p class="post-summary-text"><strong>The most actionable signal in any AEO report is the competitor bucket, not the overall score.</strong> The competitor bucket shows which category the engine has placed your brand in. If that category is wrong, no amount of content optimization will fix your share of voice. The remediation is category correction, not generic visibility improvement. Three engines saying they don't know your brand is actually three different problems that require three different solutions.</p>
+      </div>
+
+      <div class="post-author-bar">
+        <img src="https://everydayadvantagestudio.com/meta/jeff-mark-curator-bw.jpg" alt="Jeff Mark" class="author-photo" width="48" height="48" loading="lazy">
+        <div>
+          <div class="author-name">Jeff Mark</div>
+          <div class="author-creds">Retired Army Cybersecurity Engineer · CISSP · CISM · PMP · EAS Curator</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="post-body">
+    <div class="wrap">
+      <div class="post-content">
+
+        <h2>Why I ran an AEO grader on my own brand</h2>
+
+        <p>On May 6, 2026, I ran the HubSpot AI Search Grader on Everyday Advantage Studio, the main EAS catalog site. I had two reasons. First, I wanted a baseline before making any GEO changes so I'd have real before/after data. Second, the EAS GEO vertical is built around recommending GEO tools, and I wasn't going to do that without running the same diagnostic I'd recommend to anyone else.</p>
+
+        <p>What came back was instructive, not because the scores were particularly good or bad, but because the report contained information that most people reading it would completely ignore. The competitor buckets were wrong on two of the three engines. Understanding why that matters, and what to do about it, is the entire point of this post.</p>
+
+        <p>I'm publishing the full data here because transparency about real results is the EAS standard. If you're going to trust a recommendation about GEO tools, you should be able to see what happens when the same person runs those tools on their own brand.</p>
+
+        <h2>The baseline scores: what three engines saw</h2>
+
+        <p>The HubSpot AEO Grader tests your brand across ChatGPT (powered by GPT-5.2 with a knowledge cutoff of August 31, 2025), Perplexity (real-time retrieval, no cutoff), and Gemini (Gemini 3 Flash Preview, cutoff January 2025). Here are the overall scores for Everyday Advantage Studio:</p>
+
+        <div class="score-grid">
+          <div class="score-card">
+            <div class="score-engine">ChatGPT</div>
+            <div class="score-num">32</div>
+            <div class="score-denom">out of 100</div>
+          </div>
+          <div class="score-card">
+            <div class="score-engine">Perplexity</div>
+            <div class="score-num">30</div>
+            <div class="score-denom">out of 100</div>
+          </div>
+          <div class="score-card">
+            <div class="score-engine">Gemini</div>
+            <div class="score-num">37</div>
+            <div class="score-denom">out of 100</div>
+          </div>
+        </div>
+
+        <p>The natural reaction to seeing scores in the 30s is "these are bad scores." That reaction is not wrong, but it's also not useful. The scores tell you the magnitude of the problem. They don't tell you which problem you have. For that, you need to look at the six sub-metrics and, most importantly, the competitor buckets.</p>
+
+        <h2>What each metric actually measures</h2>
+
+        <p>The HubSpot grader breaks the overall score into six dimensions. Understanding what each one is actually measuring changes how you prioritize remediation.</p>
+
+        <div class="data-table-wrap">
+          <table class="data-table">
+            <thead><tr><th>Metric</th><th>What it actually measures</th><th>EAS Score</th></tr></thead>
+            <tbody>
+              <tr><td>Brand Recognition</td><td>Whether the engine's training data or live retrieval contains your brand at all. Low score means the brand is invisible to that engine.</td><td>2–3 / 20</td></tr>
+              <tr><td>Market Score</td><td>How clearly the engine has categorized your brand within an industry. Low score means the engine is uncertain or wrong about your category.</td><td>3–6 / 10</td></tr>
+              <tr><td>Presence Quality</td><td>Whether the brand's own published content is structured authoritatively, site, posts, meta data, schema.</td><td>4–7 / 20</td></tr>
+              <tr><td>Brand Sentiment</td><td>Whether the language the engine uses about the brand is positive, neutral, or negative.</td><td>14–27 / 40</td></tr>
+              <tr><td>Share of Voice</td><td>Whether the brand surfaces in category prompts alongside competitors.</td><td>0 / 10</td></tr>
+              <tr><td>Polarization</td><td>How divided opinion is about the brand. High polarization can indicate either controversy or strong advocacy.</td><td>15–25 / 100</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p>Two things jump out immediately from the EAS data. First, sentiment scores are relatively strong, 23/40 on ChatGPT, 27/40 on Gemini. The language the engines use about the brand is neutral-to-positive. There's no reputation damage to repair. Second, Share of Voice is zero across all three engines. The brand doesn't surface in any category prompts at all.</p>
+
+        <p>That combination, decent sentiment, zero share of voice, tells you something specific. The engines have absorbed some information about the brand, and they don't dislike what they've found. But they haven't categorized it clearly enough to surface it when someone asks about tools in the space. That's a category clarity problem, not a reputation problem.</p>
+
+        <h2>The competitor bucket: the most underused signal in any AEO report</h2>
+
+        <p>Every AEO grader shows you which competitors it grouped your brand alongside. Most people scroll past this section. That's a mistake. The competitor bucket is the most valuable data on the page.</p>
+
+        <p>Here's why: AI engines don't evaluate your brand in isolation. They evaluate it in relation to other brands they've already categorized. When a user asks "what's the best email tool for creators," the engine doesn't search all brands it knows about, it pulls from its mental model of the creator email tool category. If your brand isn't in that mental model, you won't appear regardless of how optimized your content is.</p>
+
+        <p>The competitor bucket tells you which mental model the engine has filed your brand in. And for EAS, the results across three engines revealed three completely different, and mostly wrong, answers.</p>
+
+        <div class="data-table-wrap">
+          <table class="data-table">
+            <thead><tr><th>Engine</th><th>Competitor Bucket</th><th>What the engine thinks EAS is</th></tr></thead>
+            <tbody>
+              <tr><td>ChatGPT</td><td>ShareASale, CJ Affiliate, Rakuten, Impact, PartnerStack, Awin, Amazon Associates</td><td>An affiliate network, a platform that manages affiliate programs for brands</td></tr>
+              <tr><td>Perplexity</td><td>AnyTrack, Hero Plus, ConvertKit, Semrush, Impact, ContentStudio</td><td>An affiliate tracking SaaS, software that tracks affiliate performance data</td></tr>
+              <tr><td>Gemini</td><td>Kit, LTK, Benable, Lasso, Amazon Influencer</td><td>A creator-facing curation publication, which is correct</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p>Gemini got it right. EAS is a curated catalog of operator-grade tools, that's exactly what Kit, LTK, Benable, and Lasso do for their respective audiences. ChatGPT put EAS in the affiliate network category, alongside the platforms that run affiliate programs for brands, not the sites that recommend tools to individual operators. Perplexity put EAS in the affiliate tracking SaaS category, alongside software tools that help marketers measure campaign performance.</p>
+
+        <p>Both ChatGPT and Perplexity are wrong. And the wrongness matters because when someone asks ChatGPT "what's the best affiliate tool catalog for indie founders," it pulls from its mental model of creator curation sites, and EAS isn't in that model. It's in the affiliate network model, which means it surfaces when people ask about running an affiliate program, not when they ask about finding curated tools.</p>
+
+        <div class="callout-box orange">
+          <div class="callout-icon">⚠</div>
+          <div class="callout-body"><strong>The key insight:</strong> The fix for a wrong competitor bucket is not "increase recognition." Generic recognition improvement makes the engine notice your brand more, in the wrong category. The fix is category correction: publish content that uses the same vocabulary and entity associations as the correct category, so the engine reclassifies the brand.</div>
+        </div>
+
+        <h2>Why three engines gave three different reads</h2>
+
+        <p>Each engine processes information differently, which is why the same brand can get completely different categorizations from three different systems.</p>
+
+        <h3>Why ChatGPT put EAS in the affiliate network category</h3>
+
+        <p>ChatGPT's knowledge cutoff for this grader run was August 31, 2025. It relies primarily on its training data rather than real-time web retrieval. EAS launched in 2024, which means it had a relatively short window to appear in training data before the cutoff. The word "affiliate" appears prominently in affiliate marketing content, and the pattern of language used on affiliate publisher sites often resembles the language used by affiliate networks. Without enough distinctive content establishing the "curator" identity, ChatGPT defaulted to the nearest recognizable affiliate category in its training data.</p>
+
+        <h3>Why Perplexity put EAS in the tracking SaaS category</h3>
+
+        <p>Perplexity uses real-time web retrieval, which means it found the live site. But the live site at the time of the grader run hadn't yet deployed the structured data block or the tagline system that anchors the brand in the creator curation category. Without JSON-LD declaring the organization type and knowsAbout topics, Perplexity had to infer the category from the text content, and the text content mentioned affiliate marketing tools heavily. It landed in the affiliate tools category, which is closer than ChatGPT's read but still wrong.</p>
+
+        <h3>Why Gemini got it right</h3>
+
+        <p>Gemini's categorization was correct, and the grader report explains why. The grader noted that Gemini "pulled digital footprints across social media, creator communities, and marketing resource aggregators." EAS has an active Pinterest presence with significant pin volume. Pinterest is a creator-curation platform by nature, and the pins pattern-matched to how creator curation sites present tools. Gemini's heavier weighting of social signals gave it the right read that ChatGPT and Perplexity missed.</p>
+
+        <p>This reveals an important tactical point: Gemini is the engine most responsive to social signal optimization. If your brand has a Pinterest, LinkedIn, or YouTube presence, those signals carry meaningful weight in Gemini's categorization. ChatGPT and Perplexity respond more directly to site content, structured data, and third-party citations.</p>
+
+        <h2>What the sentiment data tells you, and what it doesn't</h2>
+
+        <p>EAS scored 23/40 on ChatGPT sentiment, 14/40 on Perplexity, and 27/40 on Gemini. The Perplexity sentiment score being lower than the others is worth examining.</p>
+
+        <p>Perplexity's grader report noted "limited public mentions and online presence" and "absence of press coverage or media attention." This is not a statement about brand reputation. It's a statement about brand visibility. Perplexity uses real-time retrieval, so when it sees limited third-party mentions, that directly depresses its sentiment analysis, not because anyone is saying negative things about the brand, but because there aren't enough sources for it to draw a strong positive signal from.</p>
+
+        <p>The polarization scores, 22 on ChatGPT, 15 on Perplexity, 25 on Gemini, are all low. Low polarization can mean two things: either the brand is well-liked without strong detractors, or the brand doesn't have enough visibility to generate strong opinions either way. Given the low Brand Recognition scores, this is almost certainly the latter. The brand hasn't generated enough public discourse to create divided opinions.</p>
+
+        <div class="callout-box teal">
+          <div class="callout-icon">💡</div>
+          <div class="callout-body"><strong>What this means for remediation:</strong> Sentiment is neutral-to-positive everywhere. There's no reputation damage to repair. The problem is entirely on the visibility and categorization side, which is a better problem to have. You don't have to overcome negative associations; you just have to become more visible and more correctly categorized.</div>
+        </div>
+
+        <h2>The five remediation levers, ranked by impact</h2>
+
+        <p>The AEO grader output points at the problem. It doesn't tell you what to do about it in priority order. Based on the EAS diagnostic and the broader research on what actually moves AEO scores, here are the five levers ranked by leverage for a brand starting near zero recognition.</p>
+
+        <h3>Lever 1: Get cited on third-party sites engines crawl</h3>
+
+        <p>This is the single highest-leverage action for any brand with low recognition scores. Directories like G2, Capterra, Product Hunt, AlternativeTo, and Indie Hackers; tool roundup posts on established blogs; podcast transcripts; and guest articles on relevant publications all create the third-party citations that retrieval engines weight heavily. Self-published content matters less than how other authoritative sources describe you.</p>
+
+        <h3>Lever 2: Publish category-defining content under a consistent brand line</h3>
+
+        <p>A locked tagline on every page (homepage, footer, masthead, blog posts, newsletter) gives engines a consistent phrase to associate with your entity URL. Engines need repetition of the same phrase tied to the same domain to build the category association. For EAS, this meant deploying "The Operator's Edge" consistently across all touchpoints rather than leaving it defined only in an internal brand bible.</p>
+
+        <h3>Lever 3: Deploy JSON-LD structured data</h3>
+
+        <p>Structured data replaces engine guesswork with declared facts. A properly constructed Organization schema with knowsAbout topics, a named founder, and sameAs cross-platform references tells the engine exactly what category to place your brand in. Without it, the engine infers, and as the EAS data shows, inference produces wrong answers. The JSON-LD implementation is covered in detail in the companion post: <a href="/blog/json-ld-for-indie-operators.html">JSON-LD for Indie Operator Brands: The Minimum Viable Schema</a>.</p>
+
+        <h3>Lever 4: Publish income reports, case studies, and data transparency content</h3>
+
+        <p>Real numbers generate third-party citations because other publications quote them. An income report showing $X in affiliate commissions from a specific tool gives other bloggers a data point to reference, which generates inbound citations that feed back into lever 1. This is the mechanism by which transparency content compounds. It's not just content; it's a citation-generation machine.</p>
+
+        <h3>Lever 5: Get the named operator on niche podcasts</h3>
+
+        <p>Podcast transcripts are indexed by both training corpora and Perplexity's real-time retrieval. A guest appearance on a relevant podcast with a transcribed audio track creates a third-party citation with the named operator's expertise associated with a specific topic. One quality podcast appearance per month for six months creates meaningful movement in personal brand recognition signals, particularly relevant for Perplexity's source-quality scoring.</p>
+
+        <h2>The 90-day re-measurement plan</h2>
+
+        <p>Running an AEO grader once produces a baseline. Running it again 90 days later, against the same prompts and the same engines, produces the data that matters: whether the remediation worked and whether the engines updated their categorization.</p>
+
+        <p>The EAS re-measurement is scheduled for August 6, 2026. The specific metrics to watch:</p>
+
+        <div class="data-table-wrap">
+          <table class="data-table">
+            <thead><tr><th>Metric</th><th>May 2026 Baseline</th><th>August 2026 Target</th></tr></thead>
+            <tbody>
+              <tr><td>Brand Recognition, ChatGPT</td><td>2 / 20</td><td>5–7 / 20</td></tr>
+              <tr><td>Brand Recognition, Perplexity</td><td>3 / 20</td><td>5–7 / 20</td></tr>
+              <tr><td>Brand Recognition, Gemini</td><td>2 / 20</td><td>5–7 / 20</td></tr>
+              <tr><td>Share of Voice, any engine</td><td>0 / 10</td><td>Any non-zero result</td></tr>
+              <tr><td>ChatGPT competitor bucket</td><td>Affiliate networks</td><td>Creator publications (Kit, LTK, Benable)</td></tr>
+              <tr><td>ChatGPT brand archetype</td><td>Traditionalist</td><td>Innovator (matching Gemini)</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p>The single most important metric to track is whether ChatGPT and Perplexity update their competitor buckets to include creator-curation brands instead of affiliate networks and tracking SaaS. Score deltas without bucket shifts mean the engines are noticing the brand more but still miscategorizing it. Bucket shifts confirm the repositioning has actually landed.</p>
+
+        <p>This post will be updated with the August data when the re-measurement runs. That's the EAS standard, not a one-time report, but a recurring diagnostic tied to specific targets.</p>
+
+        <h2>What to do with your own AEO grader report</h2>
+
+        <p>If you've run an AEO grader or are about to, here's the sequence that produces the most useful read:</p>
+
+        <ol>
+          <li><strong>Skip the overall score for now.</strong> It's a summary of six different problems compressed into one number. It's not a useful starting point.</li>
+          <li><strong>Go straight to the competitor bucket.</strong> Write down which brands each engine grouped you with. Then ask: is that the category I want to be in? If not, that's your primary problem.</li>
+          <li><strong>Check Brand Recognition next.</strong> Scores below 5/20 mean the engine doesn't know you exist. Scores above 10/20 mean it knows you but may have you in the wrong category. These require different remediation.</li>
+          <li><strong>Look at Presence Quality.</strong> This is the most actionable metric in the short term, it reflects your own published content and structured data, which you control directly.</li>
+          <li><strong>Note Perplexity separately.</strong> Perplexity uses real-time retrieval, which means changes to your site and third-party citations show up much faster than in ChatGPT or Gemini. If you're going to prioritize one engine for early movement, prioritize Perplexity.</li>
+          <li><strong>Build a 90-day measurement plan before you do anything.</strong> Define the specific metrics and bucket changes you're targeting. Otherwise you'll run the grader again in three months and not know whether what you did worked.</li>
+        </ol>
+
+        <p>The HubSpot AI Search Grader is free. It takes about 60 seconds to run. If you haven't run it on your own brand yet, that's the starting point, not this post, not any tool, not any strategy. <a href="https://www.hubspot.com/aeo-grader" target="_blank" rel="noopener">Run the grader first</a>, then come back and apply the diagnostic framework above to your own results.</p>
+
+        <!-- FAQ -->
+        <div class="faq-section">
+          <h2>Frequently Asked Questions</h2>
+
+          <div class="faq-item">
+            <p class="faq-q">What is an AEO grader?</p>
+            <p class="faq-a">An AEO (Answer Engine Optimization) grader is a tool that measures how visible your brand is across AI search engines like ChatGPT, Perplexity, and Google AI Overviews. It scores your brand on dimensions including recognition, market positioning, content quality, sentiment, and share of voice. The HubSpot AI Search Grader is currently the most accessible free option, it tests across three engines simultaneously with no account required.</p>
+          </div>
+
+          <div class="faq-item">
+            <p class="faq-q">What does the competitor bucket in an AEO report mean?</p>
+            <p class="faq-a">The competitor bucket shows which brands an AI engine groups your brand alongside. This reveals what category the engine believes your brand belongs to, which determines which user queries you appear on. If the engine has you in the wrong category, fixing that misclassification is more valuable than improving any other score. Your remediation strategy should focus on category correction before generic visibility improvement.</p>
+          </div>
+
+          <div class="faq-item">
+            <p class="faq-q">Why do different AI engines score the same brand differently?</p>
+            <p class="faq-a">Each engine uses different data sources and processes them differently. ChatGPT and Gemini rely primarily on their training data with different cutoff dates. Perplexity uses real-time web retrieval. Gemini additionally indexes social media signals and directory listings. This means the same brand can score very differently across engines, and the remediation strategy differs for each engine.</p>
+          </div>
+
+          <div class="faq-item">
+            <p class="faq-q">How long does it take for AEO changes to show up in grader scores?</p>
+            <p class="faq-a">Perplexity updates fastest because it uses real-time retrieval, changes to your website can appear in Perplexity results within days. ChatGPT and Gemini update on training cycles, so changes to your site structure and schema may take weeks to months to reflect. Third-party citations and directory listings can accelerate the process across all engines. Plan for a 90-day measurement window before expecting meaningful score movement.</p>
+          </div>
+
+          <div class="faq-item">
+            <p class="faq-q">What is the most important metric in an AEO grader report?</p>
+            <p class="faq-a">The competitor bucket, not the overall score. The competitor bucket reveals how the engine has categorized your brand, which determines which queries you appear on. A brand with a low overall score but correct category classification is in a better strategic position than a brand with a higher score in the wrong category. Fix the category first. Everything else improves downstream from that correction.</p>
+          </div>
+        </div>
+
+        <!-- POST CTA -->
+        <div class="post-cta">
+          <h3>Run the free check on your brand</h3>
+          <p>The HubSpot AI Search Grader shows you exactly where you stand across ChatGPT, Perplexity, and Google AI. Free, no account required, takes 60 seconds.</p>
+          <a href="https://www.hubspot.com/aeo-grader" target="_blank" rel="noopener" class="btn-primary">Check Your AI Visibility for Free →</a>
+          <p class="post-cta-free">Free · No signup · No credit card</p>
+        </div>
+
+        <!-- AUTHOR BIO -->
+        <div class="author-bio">
+          <img src="https://everydayadvantagestudio.com/meta/jeff-mark-curator-bw.jpg" alt="Jeff Mark, EAS Curator" class="author-bio-photo" width="72" height="72" loading="lazy">
+          <div>
+            <div class="author-bio-name">Jeff Mark</div>
+            <div class="author-bio-title">Curator, Everyday Advantage Studio</div>
+            <p class="author-bio-text">Retired Army Cybersecurity Engineer with 25 years securing Army and Government systems. Every tool reviewed on EAS GEO is tested on real EAS content, not a demo environment, not a spec sheet. Jeff's CISSP and CISM credentials mean every review includes a data posture section covering what the tool collects, how it's stored, and whether you can exit cleanly.</p>
+            <div class="author-bio-certs">
+              <span class="cert-badge">CISSP</span>
+              <span class="cert-badge">CISM</span>
+              <span class="cert-badge">PMP</span>
+              <span class="cert-badge">Houston, TX</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <div class="footer-logo">
+            <img src="/EAS-GEO-icon-800.png" alt="EAS GEO" class="logo-mark-img" width="32" height="32">
+            <div><div class="logo-text">EAS GEO</div><div class="logo-sub">by Everyday Advantage Studio</div></div>
+          </div>
+          <p class="footer-tagline">Operator-tested GEO tools and strategies for solo operators who need to be found by AI.</p>
+          <p class="footer-copy">© 2026 Everyday Advantage Studio · All rights reserved</p>
+        </div>
+        <div class="footer-links">
+          <p class="footer-links-label">More Posts</p>
+          <a href="/blog/json-ld-for-indie-operators.html">JSON-LD for Indie Operators</a>
+          <a href="/blog/">All Posts →</a>
+        </div>
+        <div class="footer-links">
+          <p class="footer-links-label">Tools</p>
+          <a href="/tools/hubspot.html">HubSpot AI Grader</a>
+          <a href="/tools/frase.html">Frase</a>
+          <a href="/tools/se-ranking.html">SE Ranking</a>
+          <a href="/tools/">All Tools →</a>
+        </div>
+      </div>
+      <div class="footer-bottom">EAS GEO is a vertical of <a href="https://everydayadvantagestudio.com">Everyday Advantage Studio</a>. Affiliate relationships disclosed on every page.</div>
+    </div>
+  </footer>
+
+  <script>
+    (function(){ var h=document.getElementById('siteHeader'); if(!h) return; var u=function(){ h.classList.toggle('scrolled',window.scrollY>8); }; u(); window.addEventListener('scroll',u,{passive:true}); })();
+  </script>
+</body>
+</html>
