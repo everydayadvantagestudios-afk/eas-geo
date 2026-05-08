@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JSON-LD for Indie Operator Brands: The Minimum Viable Schema | EAS GEO</title>
+  <meta name="description" content="Without structured data, AI engines guess what your brand is. Here's the exact JSON-LD block, Organization, WebSite, Person, WebPage: that tells engines the facts directly, with the complete reusable code template deployed on EAS.">
+  <meta property="og:title" content="JSON-LD for Indie Operator Brands: The Minimum Viable Schema"/>
+  <meta property="og:description" content="The complete reusable JSON-LD schema block for indie operator brands, Organization, WebSite, Person, WebPage: with implementation notes and validation steps."/>
+  <meta property="og:url" content="https://geo.everydayadvantagestudio.com/blog/json-ld-for-indie-operators.html"/>
+  <meta name="twitter:card" content="summary_large_image"/>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BlogPosting",
+        "@id": "https://geo.everydayadvantagestudio.com/blog/json-ld-for-indie-operators.html#article",
+        "headline": "JSON-LD for Indie Operator Brands: The Minimum Viable Schema",
+        "description": "Without structured data, AI engines guess what your brand is. Here's the exact JSON-LD block that tells engines the facts directly, with the complete reusable code template deployed on EAS.",
+        "datePublished": "2026-05-07",
+        "dateModified": "2026-05-07",
+        "author": {
+          "@type": "Person",
+          "@id": "https://geo.everydayadvantagestudio.com/#person-jeff",
+          "name": "Jeff Mark",
+          "jobTitle": "Curator",
+          "description": "Retired Army Cybersecurity Engineer, CISSP, CISM, PMP"
+        },
+        "publisher": { "@id": "https://geo.everydayadvantagestudio.com/#organization" },
+        "url": "https://geo.everydayadvantagestudio.com/blog/json-ld-for-indie-operators.html",
+        "isPartOf": { "@id": "https://geo.everydayadvantagestudio.com/blog/#blog" },
+        "about": ["JSON-LD", "structured data", "schema.org", "GEO", "AEO", "entity declaration", "Organization schema"],
+        "inLanguage": "en-US",
+        "mainEntityOfPage": "https://geo.everydayadvantagestudio.com/blog/json-ld-for-indie-operators.html"
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What is JSON-LD and why does it matter for GEO?",
+            "acceptedAnswer": { "@type": "Answer", "text": "JSON-LD (JavaScript Object Notation for Linked Data) is a structured data format that lets you declare facts about your brand directly to search engines and AI systems. Without it, AI engines have to infer what your brand is from your content, and they frequently get it wrong. JSON-LD replaces inference with declaration, telling engines your brand name, category, founder, and topical authority without requiring them to guess." }
+          },
+          {
+            "@type": "Question",
+            "name": "What is the @graph pattern in JSON-LD?",
+            "acceptedAnswer": { "@type": "Answer", "text": "The @graph pattern lets you declare multiple related entities in a single JSON-LD block, with each entity referencing the others by @id URI fragments. This is the correct pattern for a homepage because it allows the Organization, WebSite, Person, and WebPage entities to reference each other, creating a connected entity graph that engines can traverse." }
+          },
+          {
+            "@type": "Question",
+            "name": "Where should JSON-LD structured data be placed on a page?",
+            "acceptedAnswer": { "@type": "Answer", "text": "JSON-LD should be placed inside a script tag with type='application/ld+json' in the head section of every page. It does not need to be visible to users and should not be placed in the body. Most platforms and site builders support adding script tags to the head, though the method varies by platform." }
+          },
+          {
+            "@type": "Question",
+            "name": "How do I validate JSON-LD structured data after deploying it?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Use two validators: Google's Rich Results Test (search.google.com/test/rich-results) and Schema.org Validator (validator.schema.org). Paste your live URL into each. The Rich Results Test confirms Google can parse the entities correctly. The Schema.org Validator checks for property errors and warnings. Fix any errors before requesting indexing in Google Search Console." }
+          },
+          {
+            "@type": "Question",
+            "name": "What is the knowsAbout property in Organization schema?",
+            "acceptedAnswer": { "@type": "Answer", "text": "The knowsAbout property declares the topical areas your organization has expertise in. AI engines use this array to understand what category your brand belongs to and which queries it's relevant for. Include specific, accurate terms that match how people search for your content, not generic terms, but the specific topics you actually cover." }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300..700;1,9..40,300..700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css">
+
+  <style>
+    .post-hero { padding-block: var(--space-9) var(--space-7); border-bottom: 1px solid var(--border); }
+    .post-meta-row { display: flex; align-items: center; gap: var(--space-4); margin-bottom: var(--space-5); flex-wrap: wrap; }
+    .post-cat { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--teal); }
+    .post-date { font-size: 0.75rem; color: var(--ink-dim); }
+    .post-read-time { font-size: 0.75rem; color: var(--ink-dim); }
+    .post-h1 { font-family: var(--serif); font-size: clamp(2rem, 5vw, 3.4rem); font-weight: 400; line-height: 1.08; letter-spacing: -0.02em; margin-bottom: var(--space-5); max-width: 22ch; }
+    .post-lede { font-size: 1.1rem; color: var(--ink-muted); line-height: 1.7; max-width: 58ch; margin-bottom: var(--space-5); font-weight: 300; }
+    .post-summary-box { padding: var(--space-5); background: color-mix(in srgb, var(--teal) 6%, transparent); border: 1px solid var(--teal-dim); border-radius: 10px; margin-bottom: var(--space-5); }
+    .post-summary-label { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--teal-light); margin-bottom: var(--space-3); }
+    .post-summary-text { font-size: 0.9rem; color: var(--ink-muted); line-height: 1.65; }
+    .post-summary-text strong { color: var(--ink); font-weight: 500; }
+    .post-author-bar { display: flex; align-items: center; gap: var(--space-4); padding: var(--space-4) var(--space-5); background: var(--bg-surface); border: 1px solid var(--border); border-radius: 10px; }
+    .author-photo { width: 48px; height: 48px; border-radius: 50%; object-fit: cover; background: var(--bg-card); flex-shrink: 0; }
+    .author-name { font-size: 0.875rem; font-weight: 600; color: var(--ink); margin-bottom: 2px; }
+    .author-creds { font-size: 0.72rem; color: var(--teal-light); }
+
+    .post-body { padding-block: var(--space-8); }
+    .post-content { max-width: var(--max-prose); margin: 0 auto; }
+    .post-content h2 { font-family: var(--serif); font-size: clamp(1.5rem, 3vw, 2rem); font-weight: 400; line-height: 1.2; letter-spacing: -0.01em; margin-top: var(--space-8); margin-bottom: var(--space-4); color: var(--ink); }
+    .post-content h3 { font-family: var(--sans); font-size: 1.05rem; font-weight: 700; margin-top: var(--space-6); margin-bottom: var(--space-3); color: var(--ink); }
+    .post-content p { font-size: 1rem; color: var(--ink-muted); line-height: 1.75; margin-bottom: var(--space-4); }
+    .post-content p strong { color: var(--ink); font-weight: 600; }
+    .post-content ul, .post-content ol { margin-bottom: var(--space-4); padding-left: var(--space-5); }
+    .post-content li { font-size: 1rem; color: var(--ink-muted); line-height: 1.7; margin-bottom: var(--space-2); }
+    .post-content li strong { color: var(--ink); font-weight: 600; }
+    .post-content a { color: var(--teal-light); text-decoration: underline; text-decoration-color: color-mix(in srgb, var(--teal) 40%, transparent); }
+    .post-content a:hover { color: var(--teal); }
+
+    /* CODE BLOCKS */
+    .code-wrap { position: relative; margin: var(--space-6) 0; }
+    .code-label { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--teal); background: var(--bg-card); border: 1px solid var(--border); border-bottom: none; padding: var(--space-2) var(--space-4); border-radius: 8px 8px 0 0; display: inline-block; }
+    .code-block { background: #0D1A18; border: 1px solid var(--border); border-radius: 0 8px 8px 8px; padding: var(--space-5); overflow-x: auto; font-family: 'Fira Code', 'Cascadia Code', 'Consolas', monospace; font-size: 0.82rem; line-height: 1.65; color: #A8D8D4; }
+    .code-block .c-key { color: #14B8A8; }
+    .code-block .c-str { color: #A5D6A7; }
+    .code-block .c-brace { color: #7A9E98; }
+    .code-copy { position: absolute; top: 36px; right: var(--space-3); font-size: 0.7rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-muted); background: var(--bg-card); border: 1px solid var(--border); border-radius: 4px; padding: 4px 10px; cursor: pointer; transition: color 200ms, border-color 200ms; }
+    .code-copy:hover { color: var(--teal-light); border-color: var(--teal-dim); }
+
+    .callout-box { display: flex; gap: var(--space-4); padding: var(--space-5); border-radius: 10px; margin: var(--space-6) 0; }
+    .callout-box.orange { background: color-mix(in srgb, var(--orange) 6%, transparent); border: 1px solid color-mix(in srgb, var(--orange) 25%, transparent); }
+    .callout-box.teal { background: color-mix(in srgb, var(--teal) 6%, transparent); border: 1px solid var(--teal-dim); }
+    .callout-icon { font-size: 1.1rem; flex-shrink: 0; margin-top: 2px; }
+    .callout-body { font-size: 0.9rem; color: var(--ink-muted); line-height: 1.65; }
+    .callout-body strong { color: var(--ink); }
+
+    .entity-table-wrap { overflow-x: auto; margin: var(--space-6) 0; border-radius: 10px; border: 1px solid var(--border); }
+    .entity-table { width: 100%; border-collapse: collapse; font-size: 0.875rem; }
+    .entity-table th { padding: var(--space-3) var(--space-4); text-align: left; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-muted); background: var(--bg-card); border-bottom: 1px solid var(--border); }
+    .entity-table td { padding: var(--space-3) var(--space-4); border-bottom: 1px solid var(--border); color: var(--ink-muted); vertical-align: top; line-height: 1.5; }
+    .entity-table tr:last-child td { border-bottom: none; }
+    .entity-table td:first-child { color: var(--teal-light); font-family: monospace; font-size: 0.82rem; white-space: nowrap; }
+    .entity-table tr:nth-child(even) td { background: color-mix(in srgb, var(--teal) 2%, transparent); }
+
+    .validation-steps { counter-reset: steps; display: flex; flex-direction: column; gap: var(--space-4); margin: var(--space-6) 0; }
+    .validation-step { display: flex; gap: var(--space-4); align-items: flex-start; padding: var(--space-4) var(--space-5); background: var(--bg-card); border: 1px solid var(--border); border-radius: 10px; }
+    .step-num { counter-increment: steps; width: 28px; height: 28px; background: var(--teal-dim); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.8rem; font-weight: 700; color: var(--teal-light); flex-shrink: 0; }
+    .step-content { flex: 1; }
+    .step-title { font-size: 0.875rem; font-weight: 700; color: var(--ink); margin-bottom: 4px; }
+    .step-desc { font-size: 0.82rem; color: var(--ink-muted); line-height: 1.55; }
+    .step-desc a { color: var(--teal-light); }
+
+    .faq-section { margin-top: var(--space-9); padding-top: var(--space-7); border-top: 1px solid var(--border); }
+    .faq-section h2 { font-family: var(--serif); font-size: 1.8rem; font-weight: 400; margin-bottom: var(--space-6); }
+    .faq-item { margin-bottom: var(--space-5); padding-bottom: var(--space-5); border-bottom: 1px solid var(--border); }
+    .faq-item:last-child { border-bottom: none; }
+    .faq-q { font-size: 1rem; font-weight: 700; color: var(--ink); margin-bottom: var(--space-3); line-height: 1.4; }
+    .faq-a { font-size: 0.9rem; color: var(--ink-muted); line-height: 1.7; }
+
+    .post-cta { margin-top: var(--space-9); padding: var(--space-7); background: var(--bg-surface); border: 1px solid var(--border); border-radius: 16px; text-align: center; }
+    .post-cta h3 { font-family: var(--serif); font-size: 1.8rem; font-weight: 400; margin-bottom: var(--space-3); }
+    .post-cta p { font-size: 0.9rem; color: var(--ink-muted); max-width: 42ch; margin: 0 auto var(--space-5); line-height: 1.65; }
+    .post-cta-free { font-size: 0.75rem; color: var(--ink-dim); margin-top: var(--space-3); }
+
+    .author-bio { margin-top: var(--space-8); padding: var(--space-6); background: var(--bg-surface); border: 1px solid var(--border); border-radius: 12px; display: flex; gap: var(--space-5); align-items: flex-start; }
+    .author-bio-photo { width: 72px; height: 72px; border-radius: 50%; object-fit: cover; background: var(--bg-card); flex-shrink: 0; }
+    .author-bio-name { font-size: 1rem; font-weight: 700; color: var(--ink); margin-bottom: 4px; }
+    .author-bio-title { font-size: 0.75rem; color: var(--teal-light); font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: var(--space-3); }
+    .author-bio-text { font-size: 0.875rem; color: var(--ink-muted); line-height: 1.65; }
+    .author-bio-certs { display: flex; flex-wrap: wrap; gap: var(--space-2); margin-top: var(--space-3); }
+  </style>
+</head>
+<body>
+
+  <header class="site-header" id="siteHeader">
+    <div class="wrap">
+      <div class="header-inner">
+        <a href="/" class="logo">
+          <img src="/EAS-GEO-icon-800.png" alt="EAS GEO" class="logo-mark-img" width="32" height="32">
+          <div><div class="logo-text">EAS GEO</div><div class="logo-sub">by Everyday Advantage Studio</div></div>
+        </a>
+        <nav class="header-nav">
+          <a href="/tools/">Tools</a>
+          <a href="/blog/">Blog</a>
+          <a href="https://www.hubspot.com/aeo-grader" target="_blank" rel="noopener" class="nav-cta">Free AI Check</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <section class="post-hero">
+    <div class="wrap">
+      <div class="breadcrumb"><a href="/">Home</a><span class="breadcrumb-sep">›</span><a href="/blog/">Blog</a><span class="breadcrumb-sep">›</span><span>JSON-LD for Indie Operators</span></div>
+      <div class="post-meta-row">
+        <span class="post-cat">Technical GEO</span>
+        <span class="post-date">May 7, 2026</span>
+        <span class="post-read-time">13 min read</span>
+      </div>
+      <h1 class="post-h1">JSON-LD for Indie Operator Brands: The Minimum Viable Schema</h1>
+      <p class="post-lede">Without structured data, AI engines have to guess what your brand is, what it does, and who runs it. Here's the exact JSON-LD block that tells them the facts directly, with the complete reusable code template deployed on Everyday Advantage Studio.</p>
+
+      <div class="post-summary-box">
+        <p class="post-summary-label">Quick Answer</p>
+        <p class="post-summary-text"><strong>The minimum viable schema for an indie operator brand is five entities in a single @graph block:</strong> Organization (your brand), subOrganization (any content verticals), WebSite (your publishing entity), Person (the named operator), and WebPage (the specific page). Using @id URI fragments lets these entities reference each other, creating a connected entity graph that engines can traverse without ambiguity. This replaces inference with declaration, the difference between an engine guessing your category and knowing it.</p>
+      </div>
+
+      <div class="post-author-bar">
+        <img src="https://everydayadvantagestudio.com/meta/jeff-mark-curator-bw.jpg" alt="Jeff Mark" class="author-photo" width="48" height="48" loading="lazy">
+        <div>
+          <div class="author-name">Jeff Mark</div>
+          <div class="author-creds">Retired Army Cybersecurity Engineer · CISSP · CISM · PMP · EAS Curator</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="post-body">
+    <div class="wrap">
+      <div class="post-content">
+
+        <h2>Why AI engines need structured data to get your brand right</h2>
+
+        <p>When an AI engine encounters your website, it does what any intelligent system does when it lacks explicit information: it infers. It looks at the words on your page, the links pointing to it, the other brands mentioned alongside yours, and it builds a model of what you are. That inference process works reasonably well for established brands with years of consistent third-party coverage. For indie operator brands with relatively short publishing histories, it frequently produces wrong answers.</p>
+
+        <p>The EAS baseline AEO grader run, documented in the companion post <a href="/blog/what-aeo-grader-actually-tells-you.html">What an AEO Grader Actually Tells You</a>, produced a direct illustration of this problem. ChatGPT categorized Everyday Advantage Studio as an affiliate network, alongside ShareASale, CJ Affiliate, and Rakuten. That's not remotely what EAS is. But without explicit entity declarations telling the engine what EAS is, it defaulted to the nearest recognizable pattern in its training data.</p>
+
+        <p>JSON-LD structured data solves this by replacing inference with declaration. Instead of asking the engine to figure out your brand from context clues, you tell it directly: this is the brand name, this is the category, this is the named operator, these are the topics we cover. The engine no longer needs to guess. And when engines stop guessing, they stop guessing wrong.</p>
+
+        <h2>What JSON-LD is, and what it isn't</h2>
+
+        <p>JSON-LD stands for JavaScript Object Notation for Linked Data. It's a structured data format endorsed by schema.org, the shared vocabulary that Google, Microsoft, Yahoo, and Yandex built together to standardize how websites describe themselves to machines.</p>
+
+        <p>JSON-LD lives in a script tag in your page's head section with <code>type="application/ld+json"</code>. It is completely invisible to site visitors. It renders no content on the page. It is read by search engine crawlers, AI training pipelines, and retrieval systems that process your page content.</p>
+
+        <p>JSON-LD is not a guarantee that engines will categorize you correctly. It's a strong signal that dramatically increases the probability of correct categorization. Combined with consistent brand language across your site and third-party citations that reinforce the same entity, structured data creates a coherent picture that engines can trust.</p>
+
+        <p>It is also not a ranking factor in the traditional sense. JSON-LD doesn't directly make you rank higher on Google. What it does is improve entity recognition, which determines whether you appear in AI-generated answers, AI Overviews, and retrieval-augmented generation outputs. Those are increasingly the surfaces where discovery happens, and entity recognition is the entry ticket.</p>
+
+        <h2>The @graph pattern: why it matters for indie operator sites</h2>
+
+        <p>There are several ways to structure JSON-LD on a page. The cleanest and most powerful approach for a brand homepage is the @graph pattern, a single JSON-LD block that declares multiple entities simultaneously, with each entity referencing the others by @id.</p>
+
+        <p>The alternative is to use separate JSON-LD blocks for each entity type. This works but creates isolated declarations that engines process independently. The @graph pattern creates a connected entity graph where the Organization references the Person as its founder, the WebSite references the Organization as its publisher, and the WebPage references both. This relational structure is closer to how engines model the real world, and it's the canonical pattern recommended in schema.org documentation for complex entity declarations on a single page.</p>
+
+        <p>For an indie operator brand, the @graph pattern is also more efficient. One block in the head. One place to maintain and update. One validation run to confirm it parses correctly.</p>
+
+        <h2>The five entities and what each one does</h2>
+
+        <div class="entity-table-wrap">
+          <table class="entity-table">
+            <thead><tr><th>Entity type</th><th>What it declares</th><th>Why it's necessary</th></tr></thead>
+            <tbody>
+              <tr><td>Organization</td><td>The brand entity itself: name, URL, slogan, founding date, founder reference, knowsAbout topical authority array</td><td>The primary entity declaration. Without this, engines have no structured anchor for your brand identity.</td></tr>
+              <tr><td>subOrganization</td><td>Any content verticals or subdivisions under the parent brand</td><td>Declares verticals as distinct units with their own identity while maintaining the parent relationship. Creates entity separation that allows each vertical to build its own authority.</td></tr>
+              <tr><td>WebSite</td><td>Your site as a publishing entity, with a reference back to the Organization as publisher</td><td>Connects the publishing entity (your domain) to the brand entity, confirming they are the same organization. Used in sitelinks searchbox and entity consolidation.</td></tr>
+              <tr><td>Person</td><td>The named operator: name, jobTitle, employer reference</td><td>Personal authority signal. Engines weight named-author content higher than anonymous publications. Critical for EEAT (Experience, Expertise, Authoritativeness, Trustworthiness) evaluation.</td></tr>
+              <tr><td>WebPage</td><td>The specific page being indexed: name, description, isPartOf WebSite, about Organization</td><td>Connects the page to both the site and the organization it represents. The about reference is what tells engines this page is the primary representation of the brand entity.</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h2>The complete reusable JSON-LD template</h2>
+
+        <p>This is the exact block deployed on Everyday Advantage Studio after the May 2026 AEO grader diagnostic. Replace the values in brackets with your own information. Keep the structure, the @id URI fragments, and the entity relationships intact.</p>
+
+        <div class="code-wrap">
+          <span class="code-label">JSON-LD · homepage head · replace bracketed values</span>
+          <button class="code-copy" onclick="copyCode(this)">Copy</button>
+          <pre class="code-block"><code>&lt;script type="application/ld+json"&gt;
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://[yourdomain.com]/#organization",
+      "name": "[Your Brand Name]",
+      "alternateName": "[Your Abbreviation]",
+      "url": "https://[yourdomain.com]/",
+      "logo": "https://[yourdomain.com]/[your-logo.png]",
+      "description": "[One sentence: what you do and who you serve.]",
+      "slogan": "[Your primary tagline]",
+      "foundingDate": "[YYYY]",
+      "founder": { "@id": "https://[yourdomain.com]/#person-[yourname]" },
+      "knowsAbout": [
+        "[primary topic 1]",
+        "[primary topic 2]",
+        "[primary topic 3]",
+        "[add as many specific topics as accurately apply]"
+      ],
+      "subOrganization": [
+        {
+          "@type": "Organization",
+          "@id": "https://[yourdomain.com]/#[vertical-name]",
+          "name": "[Vertical Name]",
+          "description": "[What this vertical covers.]",
+          "parentOrganization": { "@id": "https://[yourdomain.com]/#organization" }
+        }
+      ],
+      "sameAs": [
+        "[https://www.youtube.com/c/yourchannel]",
+        "[https://www.linkedin.com/company/yourcompany]",
+        "[https://www.pinterest.com/youraccount]"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://[yourdomain.com]/#website",
+      "url": "https://[yourdomain.com]/",
+      "name": "[Your Brand Name]",
+      "description": "[Short site description]",
+      "publisher": { "@id": "https://[yourdomain.com]/#organization" },
+      "inLanguage": "en-US"
+    },
+    {
+      "@type": "Person",
+      "@id": "https://[yourdomain.com]/#person-[yourname]",
+      "name": "[Your Full Name]",
+      "givenName": "[First Name]",
+      "familyName": "[Last Name]",
+      "jobTitle": "[Your Role]",
+      "worksFor": { "@id": "https://[yourdomain.com]/#organization" },
+      "url": "https://[yourdomain.com]/",
+      "sameAs": [
+        "[https://www.linkedin.com/in/yourprofile]"
+      ]
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://[yourdomain.com]/#webpage",
+      "url": "https://[yourdomain.com]/",
+      "name": "[Page title as it appears in browser tab]",
+      "description": "[Meta description of this specific page]",
+      "isPartOf": { "@id": "https://[yourdomain.com]/#website" },
+      "about": { "@id": "https://[yourdomain.com]/#organization" },
+      "inLanguage": "en-US"
+    }
+  ]
+}
+&lt;/script&gt;</code></pre>
+        </div>
+
+        <h2>The knowsAbout array: where category authority lives</h2>
+
+        <p>The knowsAbout property is the most strategically important field in the Organization entity. It declares the topical areas your organization has expertise in, and engines use this array to understand what category your brand belongs to and which queries it's relevant for.</p>
+
+        <p>The common mistake is filling this array with broad, generic terms. "Marketing," "technology," "content creation." These terms appear in the knowsAbout arrays of millions of other organizations. They provide essentially no differentiation signal.</p>
+
+        <p>The correct approach is to use specific, accurate terms that match exactly how people search for content in your niche. For EAS GEO, the knowsAbout array includes:</p>
+
+        <ul>
+          <li>Generative Engine Optimization</li>
+          <li>Answer Engine Optimization</li>
+          <li>AEO and GEO content strategy</li>
+          <li>AI search visibility</li>
+          <li>ChatGPT, Perplexity, and Gemini optimization</li>
+          <li>indie founder workflow</li>
+          <li>one-person business operations</li>
+        </ul>
+
+        <p>Each term in that list is specific enough to differentiate EAS from a generic marketing site, and accurate enough to reflect what the site actually covers. The terms also overlap with how people phrase queries, "GEO content strategy" and "ChatGPT optimization" are phrases that appear in real user searches, not just internal brand vocabulary.</p>
+
+        <p>Include as many accurate terms as apply. There is no practical limit to the array length. But accuracy matters more than quantity, a knowsAbout array full of topics the site doesn't actually cover creates a mismatch between the declared entity and the observed content, which engines will eventually detect and discount.</p>
+
+        <h2>The sameAs array: cross-platform entity confirmation</h2>
+
+        <p>The sameAs property tells engines that your brand entity is the same as the accounts listed on other platforms. This is how engines confirm your brand is real, they cross-reference the declared entity against the accounts listed in sameAs, and if they match, the entity gains credibility.</p>
+
+        <p>Add every platform where your brand has an active, verified presence. YouTube channel, LinkedIn company page, Pinterest profile, Twitter/X account. The more cross-platform consistency, the stronger the entity signal.</p>
+
+        <p>The EAS main site currently has Pinterest only in the sameAs array, because that's the only social profile that was active at the time of implementation. As YouTube and LinkedIn profiles activate, they'll be added. Listing placeholder URLs for inactive profiles is worse than not listing them at all, engines check whether the accounts exist and are consistent with the declared brand.</p>
+
+        <p>The same principle applies to the Person entity's sameAs array. A LinkedIn profile for the named operator is the highest-value addition, it provides a verifiable professional identity that engines can cross-reference against the worksFor organization declaration.</p>
+
+        <h2>The subOrganization entity: declaring content verticals</h2>
+
+        <p>If your brand operates multiple content verticals, as EAS does with the main catalog and the GEO vertical, declaring them as subOrganizations allows each vertical to build its own entity authority while maintaining the parent relationship.</p>
+
+        <p>The EAS main site declares EAS GEO as a subOrganization with its own @id, name, and description. The geo.everydayadvantagestudio.com subdomain then declares itself as a separate Organization with a parentOrganization reference back to the main EAS entity. This creates a two-way entity relationship that engines can traverse in both directions.</p>
+
+        <p>The practical effect is that EAS GEO can be recognized as an entity in its own right, with its own topical authority, its own content, its own citation signals, while still benefiting from its association with the parent EAS brand. This is the entity architecture that allows brand extensions to build authority without starting from zero.</p>
+
+        <h2>Where to place the JSON-LD block</h2>
+
+        <p>The JSON-LD block goes inside the <code>&lt;head&gt;</code> section of your HTML, before the closing <code>&lt;/head&gt;</code> tag. It does not need to be at the very top of the head, engines parse the entire head section before processing the body. Placing it early in the head is a convention, not a technical requirement.</p>
+
+        <p>For sites that use a CMS like WordPress, the structured data block can be added via a plugin (RankMath, Yoast, or Schema Pro all support custom JSON-LD) or by directly editing the theme's header template. For static HTML sites like EAS, it goes directly into the HTML source.</p>
+
+        <p>The JSON-LD block should appear on the homepage at minimum. For blog posts, add a BlogPosting entity. For tool review pages, add a Review or Product entity. Each page type has its own appropriate entity, but the Organization, WebSite, and Person entities declared on the homepage carry forward as the brand foundation that all other page-level schema builds on.</p>
+
+        <h2>Validating before you deploy</h2>
+
+        <p>Broken JSON-LD is worse than no JSON-LD. A malformed block can prevent any of the declared entities from being parsed, and it can take weeks before you discover the problem on the next crawl cycle. Validate before you push to production.</p>
+
+        <div class="validation-steps">
+          <div class="validation-step">
+            <div class="step-num">1</div>
+            <div class="step-content">
+              <div class="step-title">Google Rich Results Test</div>
+              <div class="step-desc">Paste your live URL into <a href="https://search.google.com/test/rich-results" target="_blank" rel="noopener">search.google.com/test/rich-results</a>. Expect detection of Organization, WebSite, Person, and WebPage entities with no errors. This is the most important validator because it confirms Google's parser can read your schema.</div>
+            </div>
+          </div>
+          <div class="validation-step">
+            <div class="step-num">2</div>
+            <div class="step-content">
+              <div class="step-title">Schema.org Validator</div>
+              <div class="step-desc">Paste your live URL into <a href="https://validator.schema.org" target="_blank" rel="noopener">validator.schema.org</a>. This checks for property-level errors and warnings, misnamed properties, invalid value types, deprecated fields. Fix all errors before requesting indexing. Warnings can be addressed over time.</div>
+            </div>
+          </div>
+          <div class="validation-step">
+            <div class="step-num">3</div>
+            <div class="step-content">
+              <div class="step-title">View page source on the live URL</div>
+              <div class="step-desc">Go to your live URL, right-click and select "View Page Source," search for "application/ld+json." Confirm the block renders intact, some hosting platforms and CMS plugins re-encode special characters, which breaks JSON parsing. If you see &amp;quot; instead of ", the encoding is corrupted.</div>
+            </div>
+          </div>
+          <div class="validation-step">
+            <div class="step-num">4</div>
+            <div class="step-content">
+              <div class="step-title">Request indexing in Google Search Console</div>
+              <div class="step-desc">Once validators pass, go to Google Search Console → URL Inspection → paste your URL → Request Indexing. This accelerates the crawl cycle so Google processes your updated schema sooner. Repeat for any other URLs that changed.</div>
+            </div>
+          </div>
+          <div class="validation-step">
+            <div class="step-num">5</div>
+            <div class="step-content">
+              <div class="step-title">Resubmit sitemap.xml</div>
+              <div class="step-desc">In Google Search Console under Sitemaps, resubmit your sitemap.xml. If your sitemap is current and already submitted, this is optional. If you've added new pages or changed URL structure, resubmission helps accelerate discovery of the updated pages.</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="callout-box orange">
+          <div class="callout-icon">⚠</div>
+          <div class="callout-body"><strong>The validation cost is two minutes. The cost of deploying broken structured data is months.</strong> AI engines crawl on cycles, not on demand. If broken schema goes live, the engines won't discover the error until the next crawl, and they won't discover the corrected version until the crawl after that. Validate first, every time.</div>
+        </div>
+
+        <h2>Common implementation mistakes to avoid</h2>
+
+        <p><strong>Using relative URLs instead of absolute URLs.</strong> Every URL in a JSON-LD block must be fully qualified, <code>https://yourdomain.com/</code> not <code>/</code>. Relative URLs break the entity linking because engines can't resolve them to a canonical resource without the full domain context.</p>
+
+        <p><strong>Mismatching @id values.</strong> The @id values are used to link entities together. If the Organization @id in the WebSite's publisher field doesn't exactly match the Organization's declared @id, the link breaks and the entities are treated as separate, unrelated entities. Copy and paste @id values rather than retyping them.</p>
+
+        <p><strong>Listing sameAs URLs for inactive accounts.</strong> Engines verify sameAs links. A URL pointing to a suspended, deleted, or brand-inconsistent account weakens the entity signal rather than strengthening it. Only list active, verified profiles that clearly represent the same brand.</p>
+
+        <p><strong>Filling knowsAbout with aspirational topics.</strong> The knowsAbout array should reflect what the site actually covers, not what you want it to eventually cover. If you list topics that have no corresponding content on the site, engines will observe the mismatch between declared topical authority and actual content, and they'll weight your declarations less heavily as a result.</p>
+
+        <p><strong>Deploying JSON-LD only on the homepage.</strong> The homepage Organization schema is the entity foundation, but blog posts and tool review pages benefit from page-level schema too, BlogPosting and Review entities respectively. Each additional page-level schema declaration creates another data point that reinforces the entity model you've declared.</p>
+
+        <h2>What to do after deployment</h2>
+
+        <p>After the JSON-LD block is live, validated, and indexed, the next step is reinforcing the entity declaration with consistent brand language across the site. JSON-LD declares the entity in machine-readable format. Consistent taglines, headings, and category language in the human-readable content provide the natural language signals that confirm the declaration.</p>
+
+        <p>The combination, structured entity declaration plus consistent brand language, is what the EAS implementation deployed in May 2026. JSON-LD in the head declaring the organization. The tagline "The Operator's Edge" appearing in the header meta, footer, and all meta tags. Together they create two reinforcing signals that engines process through different pipelines, both pointing to the same entity and the same category.</p>
+
+        <p>The 90-day re-measurement will show whether the combination moved the competitor buckets on ChatGPT and Perplexity. That data will be published in a follow-up post when the August 2026 grader run is complete. If you've deployed the same schema pattern and want to compare results, run the <a href="https://www.hubspot.com/aeo-grader" target="_blank" rel="noopener">HubSpot AEO Grader</a> before you make any changes, then again 90 days after deployment. The baseline matters as much as the result.</p>
+
+        <!-- FAQ -->
+        <div class="faq-section">
+          <h2>Frequently Asked Questions</h2>
+
+          <div class="faq-item">
+            <p class="faq-q">What is JSON-LD and why does it matter for GEO?</p>
+            <p class="faq-a">JSON-LD (JavaScript Object Notation for Linked Data) is a structured data format that lets you declare facts about your brand directly to search engines and AI systems. Without it, AI engines have to infer what your brand is from your content, and they frequently get it wrong. JSON-LD replaces inference with declaration, telling engines your brand name, category, founder, and topical authority without requiring them to guess from context clues.</p>
+          </div>
+
+          <div class="faq-item">
+            <p class="faq-q">What is the @graph pattern in JSON-LD?</p>
+            <p class="faq-a">The @graph pattern lets you declare multiple related entities in a single JSON-LD block, with each entity referencing the others by @id URI fragments. This is the correct pattern for a homepage because it allows the Organization, WebSite, Person, and WebPage entities to reference each other, creating a connected entity graph that engines can traverse in both directions. It's more powerful than separate JSON-LD blocks for each entity type.</p>
+          </div>
+
+          <div class="faq-item">
+            <p class="faq-q">Where should JSON-LD structured data be placed on a page?</p>
+            <p class="faq-a">JSON-LD should be placed inside a script tag with type="application/ld+json" in the head section of your HTML page. It is completely invisible to visitors and renders no content on the page, it's read only by crawlers and AI systems. It does not need to be at the very top of the head, but placing it early is conventional. For CMS sites, it can be added via plugins; for static HTML sites, it goes directly in the source.</p>
+          </div>
+
+          <div class="faq-item">
+            <p class="faq-q">How do I validate JSON-LD structured data after deploying it?</p>
+            <p class="faq-a">Use two validators: Google's Rich Results Test (search.google.com/test/rich-results) and Schema.org Validator (validator.schema.org). Paste your live URL into each. The Rich Results Test confirms Google can parse the entities correctly. The Schema.org Validator checks for property errors and warnings. Fix all errors before requesting indexing in Google Search Console. Validation takes two minutes; broken schema can cost months of missed crawl cycles.</p>
+          </div>
+
+          <div class="faq-item">
+            <p class="faq-q">What is the knowsAbout property in Organization schema?</p>
+            <p class="faq-a">The knowsAbout property declares the topical areas your organization has expertise in. AI engines use this array to understand what category your brand belongs to and which queries it's relevant for. Use specific, accurate terms that match how people actually search for content in your niche, not broad generic terms that millions of other sites also claim. Accuracy matters more than quantity; listing topics the site doesn't actually cover creates a mismatch that engines will eventually detect.</p>
+          </div>
+        </div>
+
+        <!-- POST CTA -->
+        <div class="post-cta">
+          <h3>See where you stand before you build</h3>
+          <p>Run the free HubSpot AI Search Grader first. It shows exactly how the engines have categorized your brand, so you know what the schema needs to fix.</p>
+          <a href="https://www.hubspot.com/aeo-grader" target="_blank" rel="noopener" class="btn-primary">Check Your AI Visibility for Free →</a>
+          <p class="post-cta-free">Free · No signup · No credit card</p>
+        </div>
+
+        <!-- AUTHOR BIO -->
+        <div class="author-bio">
+          <img src="https://everydayadvantagestudio.com/meta/jeff-mark-curator-bw.jpg" alt="Jeff Mark, EAS Curator" class="author-bio-photo" width="72" height="72" loading="lazy">
+          <div>
+            <div class="author-bio-name">Jeff Mark</div>
+            <div class="author-bio-title">Curator, Everyday Advantage Studio</div>
+            <p class="author-bio-text">Retired Army Cybersecurity Engineer with 25 years securing Army and Government systems. Every implementation documented on EAS GEO is deployed on real EAS infrastructure, not a demo, not a client case study. Jeff's CISSP and CISM credentials inform the data posture review included in every tool evaluation on this site.</p>
+            <div class="author-bio-certs">
+              <span class="cert-badge">CISSP</span>
+              <span class="cert-badge">CISM</span>
+              <span class="cert-badge">PMP</span>
+              <span class="cert-badge">Houston, TX</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <div class="footer-logo">
+            <img src="/EAS-GEO-icon-800.png" alt="EAS GEO" class="logo-mark-img" width="32" height="32">
+            <div><div class="logo-text">EAS GEO</div><div class="logo-sub">by Everyday Advantage Studio</div></div>
+          </div>
+          <p class="footer-tagline">Operator-tested GEO tools and strategies for solo operators who need to be found by AI.</p>
+          <p class="footer-copy">© 2026 Everyday Advantage Studio · All rights reserved</p>
+        </div>
+        <div class="footer-links">
+          <p class="footer-links-label">More Posts</p>
+          <a href="/blog/what-aeo-grader-actually-tells-you.html">What an AEO Grader Actually Tells You</a>
+          <a href="/blog/">All Posts →</a>
+        </div>
+        <div class="footer-links">
+          <p class="footer-links-label">Tools</p>
+          <a href="/tools/hubspot.html">HubSpot AI Grader</a>
+          <a href="/tools/frase.html">Frase</a>
+          <a href="/tools/se-ranking.html">SE Ranking</a>
+          <a href="/tools/">All Tools →</a>
+        </div>
+      </div>
+      <div class="footer-bottom">EAS GEO is a vertical of <a href="https://everydayadvantagestudio.com">Everyday Advantage Studio</a>. Affiliate relationships disclosed on every page.</div>
+    </div>
+  </footer>
+
+  <script>
+    (function(){ var h=document.getElementById('siteHeader'); if(!h) return; var u=function(){ h.classList.toggle('scrolled',window.scrollY>8); }; u(); window.addEventListener('scroll',u,{passive:true}); })();
+    function copyCode(btn) {
+      var pre = btn.parentElement.querySelector('pre');
+      if (!pre) return;
+      navigator.clipboard.writeText(pre.innerText).then(function(){
+        btn.textContent = 'Copied!';
+        setTimeout(function(){ btn.textContent = 'Copy'; }, 2000);
+      });
+    }
+  </script>
+</body>
+</html>
