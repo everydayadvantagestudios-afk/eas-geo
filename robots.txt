@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://geo.everydayadvantagestudio.com/sitemap.xml
